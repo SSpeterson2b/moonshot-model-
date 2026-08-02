@@ -9,7 +9,6 @@ const todayPicks = [
   { name: "Yordan Alvarez", team: "HOU", confidence: 86.1, note: "Power Profile" }
 ];
 
-// Best 2-Leg Parlay (just put the two names)
 const bestParlay = {
   leg1: "Aaron Judge",
   leg2: "Shohei Ohtani",
@@ -17,7 +16,7 @@ const bestParlay = {
 };
 
 // ======================================================
-//  DO NOT EDIT BELOW THIS LINE
+//  DO NOT EDIT BELOW
 // ======================================================
 
 function renderPicks() {
@@ -43,8 +42,6 @@ function renderPicks() {
 
 function renderParlay() {
   const container = document.getElementById("parlayContainer");
-
-  // Find the full player objects so we can show team names
   const p1 = todayPicks.find(p => p.name === bestParlay.leg1) || { team: "" };
   const p2 = todayPicks.find(p => p.name === bestParlay.leg2) || { team: "" };
 
@@ -55,14 +52,14 @@ function renderParlay() {
           <div class="leg-player">${bestParlay.leg1}</div>
           <div class="leg-team">${p1.team}</div>
         </div>
-        <div>HR</div>
+        <div class="hr-badge">HR</div>
       </div>
       <div class="leg">
         <div>
           <div class="leg-player">${bestParlay.leg2}</div>
           <div class="leg-team">${p2.team}</div>
         </div>
-        <div>HR</div>
+        <div class="hr-badge">HR</div>
       </div>
     </div>
     <div class="parlay-footer">
@@ -75,10 +72,8 @@ function renderParlay() {
   `;
 }
 
-// Show today's date
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 document.getElementById("todayDate").textContent = new Date().toLocaleDateString('en-US', options);
 
-// Render everything
 renderPicks();
 renderParlay();
