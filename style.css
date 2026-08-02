@@ -1,1 +1,25 @@
-style.css
+const messagesDiv = document.getElementById("messages");
+const userInput = document.getElementById("userInput");
+
+function addMessage(text, role) {
+  const div = document.createElement("div");
+  div.className = `message ${role}`;
+  div.textContent = text;
+  messagesDiv.appendChild(div);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
+  addMessage(text, "user");
+  userInput.value = "";
+
+  // Placeholder – we will connect your real model later
+  addMessage("This is a placeholder reply. Connect your model API next.", "assistant");
+}
+
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
