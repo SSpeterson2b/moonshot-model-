@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moonshot Model</title>
+  <title>Moonshot AI – Daily HR Picks</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Moonshot Model</h1>
-    <p>Chat with the model</p>
-    
-    <div class="chat-box">
-      <div id="messages"></div>
-      <div class="input-area">
-        <input type="text" id="userInput" placeholder="Type your message..." />
-        <button onclick="sendMessage()">Send</button>
+    <!-- Header -->
+    <header>
+      <h1>Moonshot AI</h1>
+      <p class="subtitle">S.P.A.R.K Model • Daily MLB Home Run Picks</p>
+      <p class="date" id="todayDate"></p>
+    </header>
+
+    <!-- Top Picks -->
+    <section>
+      <h2>Top HR Picks</h2>
+      <div class="picks-grid" id="picksContainer">
+        <!-- Player cards will be inserted here by JavaScript -->
       </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Model updated daily • For educational & entertainment purposes</p>
+    </footer>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
