@@ -1,89 +1,97 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+// ======================
+//  TODAY'S PICKS - EDIT THIS SECTION DAILY
+// ======================
+const todayPicks = [
+  {
+    name: "Aaron Judge",
+    team: "NYY",
+    confidence: 97.6,
+    exitVelo: 96,
+    barrel: "19%",
+    hardHit: "63%",
+    pitcherHR9: 1.8,
+    weather: "+5",
+    park: "+4",
+    note: "Elite Pick"
+  },
+  {
+    name: "Shohei Ohtani",
+    team: "LAD",
+    confidence: 91.2,
+    exitVelo: 94,
+    barrel: "17%",
+    hardHit: "58%",
+    pitcherHR9: 1.6,
+    weather: "+3",
+    park: "+2",
+    note: "Strong Matchup"
+  },
+  {
+    name: "Juan Soto",
+    team: "NYY",
+    confidence: 88.4,
+    exitVelo: 93,
+    barrel: "15%",
+    hardHit: "55%",
+    pitcherHR9: 1.9,
+    weather: "+5",
+    park: "+4",
+    note: "Value"
+  },
+  {
+    name: "Yordan Alvarez",
+    team: "HOU",
+    confidence: 86.1,
+    exitVelo: 95,
+    barrel: "18%",
+    hardHit: "60%",
+    pitcherHR9: 1.7,
+    weather: "+2",
+    park: "+1",
+    note: "Power Profile"
+  }
+];
+
+// ======================
+//  DO NOT EDIT BELOW
+// ======================
+
+function renderPicks() {
+  const container = document.getElementById("picksContainer");
+  container.innerHTML = "";
+
+  todayPicks.forEach(player => {
+    const card = document.createElement("div");
+    card.className = "player-card";
+
+    card.innerHTML = `
+      <div class="player-header">
+        <div>
+          <div class="player-name">${player.name}</div>
+          <div class="tag">${player.team} • ${player.note}</div>
+        </div>
+        <div class="confidence">${player.confidence}</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>Exit Velo</span><span>${player.exitVelo} mph</span></div>
+        <div class="stat"><span>Barrel %</span><span>${player.barrel}</span></div>
+        <div class="stat"><span>Hard Hit %</span><span>${player.hardHit}</span></div>
+        <div class="stat"><span>Pitcher HR/9</span><span>${player.pitcherHR9}</span></div>
+        <div class="stat"><span>Weather</span><span>${player.weather}</span></div>
+        <div class="stat"><span>Park Factor</span><span>${player.park}</span></div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
 }
 
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #0f0f0f;
-  color: #f0f0f0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
+// Show today's date
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+document.getElementById("todayDate").textContent = new Date().toLocaleDateString('en-US', options);
 
-.container {
-  width: 100%;
-  max-width: 700px;
-}
+// Load the picks
+renderPicks();
 
-h1 {
-  margin-bottom: 8px;
-}
 
-p {
-  color: #aaa;
-  margin-bottom: 24px;
-}
-
-.chat-box {
-  background: #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #333;
-}
-
-#messages {
-  height: 400px;
-  overflow-y: auto;
-  padding: 20px;
-}
-
-.input-area {
-  display: flex;
-  gap: 10px;
-  padding: 16px;
-  border-top: 1px solid #333;
-}
-
-input {
-  flex: 1;
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background: #111;
-  color: white;
-  font-size: 16px;
-}
-
-button {
-  padding: 12px 24px;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-button:hover {
-  background: #2563eb;
-}
-
-.message {
-  margin-bottom: 16px;
-  padding: 12px 16px;
-  border-radius: 8px;
-  max-width: 85%;
-}
-
-.user {
-  background: #2563eb;
-  margin-left: auto;
-}
-
-.assistant {
-  background: #2a2a2a;
-}
