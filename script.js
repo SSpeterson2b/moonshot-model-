@@ -1,24 +1,30 @@
-// ======================================================
+// ========================================================
 //  ONLY EDIT THIS SECTION EVERY DAY
 // ======================================================
 
 const todayPicks = [
-  { name: "Aaron Judge", team: "NYY", confidence: 97.6, note: "Elite Matchup" },
-  { name: "Shohei Ohtani", team: "LAD", confidence: 91.2, note: "Strong Park Edge" },
-  { name: "Juan Soto", team: "NYY", confidence: 88.4, note: "Vulnerable Pitcher" },
-  { name: "Yordan Alvarez", team: "HOU", confidence: 86.1, note: "Power Profile" }
+  { name: "John Rave", team: "KC", confidence: 92.4, note: "Strong Matchup" },
+  { name: "Esmerlyn Valdez", team: "PIT", confidence: 90.1, note: "Hot Streak" },
+  { name: "Gage Workman", team: "PIT", confidence: 88.7, note: "Power Upside" },
+  { name: "Jarred Kelenic", team: "TEX", confidence: 87.3, note: "Favorable Pitcher" },
+  { name: "James Wood", team: "WAS", confidence: 85.9, note: "Park Factor" },
+  { name: "Munetaka Murakami", team: "CWS", confidence: 84.2, note: "Elite Exit Velo" },
+  { name: "Yordan Alvarez", team: "HOU", confidence: 83.5, note: "Consistent Power" },
+  { name: "Giancarlo Stanton", team: "NYY", confidence: 81.8, note: "Launch Angle" },
+  { name: "Kyle Schwarber", team: "PHI", confidence: 80.4, note: "Pull-Side Threat" },
+  { name: "Shohei Ohtani", team: "LAD", confidence: 79.6, note: "Two-Way Edge" },
+  { name: "Christian Encarnacion-Strand", team: "BAL", confidence: 78.1, note: "Raw Power" }
 ];
 
 const bestParlay = {
-  leg1: "Aaron Judge",
-  leg2: "Shohei Ohtani",
-  odds: "+650"
+  leg1: "John Rave",
+  leg2: "Esmerlyn Valdez",
+  odds: "+720"
 };
 
 // ======================================================
 //  DO NOT EDIT BELOW
 // ======================================================
-
 function renderPicks() {
   const container = document.getElementById("picksContainer");
   container.innerHTML = "";
